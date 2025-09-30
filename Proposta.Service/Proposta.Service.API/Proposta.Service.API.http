@@ -1,0 +1,90 @@
+@Proposta.Service.API_HostAddress = http://localhost:5284
+@Docker_HostAddress = http://localhost:5000
+
+###############################################
+# PROPOSTA SERVICE - ENDPOINTS
+###############################################
+
+### Criar Nova Proposta (Docker)
+POST {{Docker_HostAddress}}/propostas
+Content-Type: application/json
+
+{
+  "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "data": "2024-09-30T10:00:00Z",
+  "segurado": "João Silva",
+  "produto": "Seguro Auto",
+  "valor": 1200.50,
+  "status": 0
+}
+
+### Criar Proposta com ID Automático
+POST {{Docker_HostAddress}}/propostas
+Content-Type: application/json
+
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "data": "2024-09-30T10:00:00Z",
+  "segurado": "Maria Santos",
+  "produto": "Seguro Residencial",
+  "valor": 800.00,
+  "status": 0
+}
+
+### Obter Proposta por ID
+GET {{Docker_HostAddress}}/propostas/a1b2c3d4-e5f6-7890-abcd-ef1234567890
+Accept: application/json
+
+### Obter Proposta por ID (Docker)
+GET {{Docker_HostAddress}}/propostas/a1b2c3d4-e5f6-7890-abcd-ef1234567890
+Accept: application/json
+
+### Obter Proposta Inexistente
+GET {{Docker_HostAddress}}/propostas/99999999-9999-9999-9999-999999999999
+Accept: application/json
+
+### Obter Todas Propostas (Primeira Página)
+GET {{Docker_HostAddress}}/propostas?pagina=1&tamanhoPagina=10
+Accept: application/json
+
+### Obter Todas Propostas (Segunda Página)
+GET {{Docker_HostAddress}}/propostas?pagina=2&tamanhoPagina=5
+Accept: application/json
+
+### Obter Todas Propostas (Docker)
+GET {{Docker_HostAddress}}/propostas?pagina=1&tamanhoPagina=10
+Accept: application/json
+
+### Atualizar Status para Aprovada
+PUT {{Docker_HostAddress}}/propostas/a1b2c3d4-e5f6-7890-abcd-ef1234567890/status
+Content-Type: application/json
+
+{
+  "status": 1
+}
+
+### Atualizar Status para Rejeitada
+PUT {{Docker_HostAddress}}/propostas/a1b2c3d4-e5f6-7890-abcd-ef1234567890/status
+Content-Type: application/json
+
+{
+  "status": 2
+}
+
+### Atualizar Status (Docker)
+PUT {{Docker_HostAddress}}/propostas/a1b2c3d4-e5f6-7890-abcd-ef1234567890/status
+Content-Type: application/json
+
+{
+  "status": 1
+}
+
+### Atualizar Status de Proposta Inexistente
+PUT {{Docker_HostAddress}}/propostas/99999999-9999-9999-9999-999999999999/status
+Content-Type: application/json
+
+{
+  "status": 1
+}
+
+###############################################

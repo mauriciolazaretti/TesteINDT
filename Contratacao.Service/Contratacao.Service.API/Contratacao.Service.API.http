@@ -1,0 +1,43 @@
+@Contratacao.Service.API_HostAddress = http://localhost:5206
+@Docker_HostAddress = http://localhost:5001
+
+###############################################
+# CONTRATACAO SERVICE - ENDPOINTS
+###############################################
+
+### Contratar Seguro (Sucesso)
+POST {{Docker_HostAddress}}/contratar
+Content-Type: application/json
+
+{
+  "propostaId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "data": "2024-09-30T10:00:00Z"
+}
+
+### Contratar Seguro (Docker)
+POST {{Docker_HostAddress}}/contratar
+Content-Type: application/json
+
+{
+  "propostaId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "data": "2024-09-30T10:00:00Z"
+}
+
+### Contratar Seguro - Proposta Inexistente
+POST {{Docker_HostAddress}}/contratar
+Content-Type: application/json
+
+{
+  "propostaId": "00000000-0000-0000-0000-000000000000",
+  "data": "2024-09-30T10:00:00Z"
+}
+
+### Contratar Seguro - Proposta Rejeitada
+POST {{Docker_HostAddress}}/contratar
+Content-Type: application/json
+
+{
+  "propostaId": "99999999-9999-9999-9999-999999999999",
+  "data": "2024-09-30T10:00:00Z"
+}
+
