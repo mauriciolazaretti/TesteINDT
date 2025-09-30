@@ -14,7 +14,6 @@ Sistema distribuído baseado em microserviços para gerenciamento de propostas e
 - **🔄 Padrão Saga**: Orquestração de transações distribuídas entre microserviços
 - **🏛️ Arquitetura Hexagonal (Ports & Adapters)**: Isolamento do domínio e infraestrutura
 - **🔌 Clean Architecture**: Separação clara de responsabilidades em camadas
-- **📊 CQRS**: Command Query Responsibility Segregation para operações de leitura/escrita
 
 ### 🎯 **Microserviços**
 
