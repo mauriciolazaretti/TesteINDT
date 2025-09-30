@@ -427,19 +427,6 @@ dotnet restore
 dotnet build
 dotnet test
 ```
-
-## 🤝 **Contribuição**
-
-1. **Fork** o projeto
-2. **Create** uma feature branch (`git checkout -b feature/nova-funcionalidade`)
-3. **Commit** suas mudanças (`git commit -am 'Adiciona nova funcionalidade'`)
-4. **Push** para a branch (`git push origin feature/nova-funcionalidade`)
-5. **Create** um Pull Request
-
-## 📜 **Licença**
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
-
 ---
 
 **✨ Desenvolvido com .NET 9.0, implementando Padrão Saga e Arquitetura Hexagonal para máxima flexibilidade e testabilidade.**
